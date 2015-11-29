@@ -1,6 +1,6 @@
 {
   "name": "html5-file-load",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple html5 helper function for reading local files.",
   "main": "lib/index.js",
   "scripts": {

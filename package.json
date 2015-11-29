@@ -1,0 +1,48 @@
+{
+  "name": "html5-file-load",
+  "version": "0.0.1",
+  "description": "Simple html5 helper function for reading local files.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "nodeunit tests/",
+    "build": "coffee -m -o lib/ src/",
+    "build-example": "browserify -d example/index.coffee -o example/index.js",
+    "watch-example": "watchify -d example/index.coffee -o example/index.js",
+    "serve-example": "http-server example/",
+    "develop-example": "concurrent 'npm run build-example' 'npm run watch-example' 'npm run serve-example'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/websecurify/node-html5-file-load.git"
+  },
+  "keywords": [
+    "html5",
+    "FileAPI"
+  ],
+  "author": "Websecurify",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/websecurify/node-html5-file-load/issues"
+  },
+  "homepage": "https://github.com/websecurify/node-html5-file-load#readme",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "coffee-script": "^1.10.0",
+    "coffeeify": "^1.2.0",
+    "concurrently": "^1.0.0",
+    "http-server": "^0.8.5",
+    "nodeunit": "^0.9.1",
+    "watchify": "^3.6.1"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4"
+  },
+  "browserify": {
+    "transform": [
+      "coffeeify"
+    ]
+  },
+  "browser": {
+    "html5-file-load": "./src/index.coffee"
+  }
+}

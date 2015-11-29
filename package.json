@@ -6,8 +6,8 @@
   "scripts": {
     "test": "nodeunit tests/",
     "build": "coffee -m -o lib/ src/",
-    "build-example": "browserify -d example/index.coffee -o example/index.js",
-    "watch-example": "watchify -d example/index.coffee -o example/index.js",
+    "build-example": "browserify -d example/index.coffee -o example/index.js -t [ coffeeify ]",
+    "watch-example": "watchify -d example/index.coffee -o example/index.js -t [ coffeeify ]",
     "serve-example": "http-server example/",
     "develop-example": "concurrent 'npm run build-example' 'npm run watch-example' 'npm run serve-example'"
   },
@@ -36,11 +36,6 @@
   },
   "dependencies": {
     "jquery": "^2.1.4"
-  },
-  "browserify": {
-    "transform": [
-      "coffeeify"
-    ]
   },
   "browser": {
     "html5-file-load": "./src/index.coffee"
